@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
     :root {
       --cream: #EDEBE3;
       --black: #0E0E0D;
@@ -17,16 +17,16 @@
       --line:  rgba(14,14,13,0.1);
       --nav-h: 58px;
     }
- 
+
     html, body {
       font-family: 'Syne', sans-serif;
       background: var(--cream);
       color: var(--black);
       overflow-x: hidden;
     }
- 
+
     a { text-decoration: none; color: inherit; }
- 
+
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -39,20 +39,20 @@
       border-bottom: 1px solid var(--line);
       z-index: 200;
     }
- 
+
     .brand {
       font-size: 0.82rem;
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
- 
+
     .nav-links {
       display: flex;
       gap: 2.2rem;
       list-style: none;
     }
- 
+
     .nav-links a {
       font-size: 0.7rem;
       font-weight: 400;
@@ -61,10 +61,10 @@
       color: var(--mid);
       transition: color 0.2s;
     }
- 
+
     .nav-links a:hover,
     .nav-links a.active { color: var(--black); }
- 
+
     .page-label {
       position: fixed;
       top: var(--nav-h);
@@ -74,18 +74,18 @@
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 0.85;
-      color: rgba(14,14,13,0.08);
+      color: rgba(14,14,13,0.25);
       pointer-events: none;
       user-select: none;
       z-index: 10;
     }
- 
+
     .portfolio-wrap {
       padding-top: calc(var(--nav-h) + 2rem);
       padding-bottom: 56px;
       min-height: 100vh;
     }
- 
+
     .filters {
       display: flex;
       gap: 0;
@@ -94,7 +94,7 @@
       position: relative;
       z-index: 1;
     }
- 
+
     .f-btn {
       font-family: 'Syne', sans-serif;
       font-size: 0.6rem;
@@ -109,14 +109,14 @@
       cursor: pointer;
       transition: all 0.2s;
     }
- 
+
     .f-btn:last-child { border-right: 1px solid var(--line); }
     .f-btn.active, .f-btn:hover {
       background: var(--black);
       color: var(--cream);
       border-color: var(--black);
     }
- 
+
     .masonry {
       columns: 3 240px;
       column-gap: 10px;
@@ -124,7 +124,7 @@
       position: relative;
       z-index: 1;
     }
- 
+
     .m-item {
       break-inside: avoid;
       margin-bottom: 10px;
@@ -133,7 +133,7 @@
       position: relative;
       aspect-ratio: 3 / 4;
     }
- 
+
     .m-item img {
       display: block;
       width: 100%;
@@ -142,9 +142,9 @@
       object-position: center top;
       transition: transform 0.45s ease;
     }
- 
+
     .m-item:hover img { transform: scale(1.03); }
- 
+
     .m-item .cap {
       position: absolute;
       bottom: 0; left: 0; right: 0;
@@ -159,11 +159,11 @@
       transform: translateY(4px);
       transition: all 0.3s;
     }
- 
+
     .m-item:hover .cap { opacity: 1; transform: translateY(0); }
- 
+
     .m-item.hidden { display: none; }
- 
+
     .tagline-bar {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -176,7 +176,7 @@
       border-top: 1px solid var(--line);
       z-index: 200;
     }
- 
+
     .tagline-bar span {
       font-size: 0.6rem;
       font-weight: 400;
@@ -184,15 +184,15 @@
       text-transform: uppercase;
       color: var(--mid);
     }
- 
+
     @media (max-width: 700px) {
       .masonry { columns: 2 160px; }
     }
- 
+
     @media (max-width: 420px) {
       .masonry { columns: 1; }
     }
- 
+
     .lb {
       position: fixed;
       inset: 0;
@@ -205,22 +205,22 @@
       pointer-events: none;
       transition: opacity 0.25s;
     }
- 
+
     .lb.open { opacity: 1; pointer-events: all; }
- 
+
     .lb-inner {
       position: relative;
       max-width: 85vw;
       max-height: 90vh;
     }
- 
+
     .lb-inner img {
       max-width: 85vw;
       max-height: 90vh;
       object-fit: contain;
       display: block;
     }
- 
+
     .lb-close {
       position: absolute;
       top: -2rem; right: 0;
@@ -233,9 +233,9 @@
       cursor: pointer;
       transition: color 0.2s;
     }
- 
+
     .lb-close:hover { color: var(--cream); }
- 
+
     .hamburger {
       display: none;
       background: none; border: none;
@@ -243,13 +243,13 @@
       flex-direction: column;
       gap: 5px;
     }
- 
+
     .hamburger span {
       display: block;
       width: 20px; height: 1px;
       background: var(--black);
     }
- 
+
     @media (max-width: 600px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
@@ -267,7 +267,7 @@
   </style>
 </head>
 <body>
- 
+
   <nav>
     <a href="index.html" class="brand">Izzy Calle Photography</a>
     <ul class="nav-links" id="navLinks">
@@ -280,9 +280,9 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
- 
+
   <div class="page-label" aria-hidden="true">Portfolio</div>
- 
+
   <div class="portfolio-wrap">
     <div class="filters">
       <button class="f-btn active" data-f="all">All</button>
@@ -290,18 +290,10 @@
       <button class="f-btn" data-f="lifestyle">Lifestyle</button>
       <button class="f-btn" data-f="commercial">Commercial</button>
     </div>
- 
+
     <div class="masonry" id="masonry">
       <div class="m-item" data-cat="portrait">
-        <img src="DSCF0814.JPG" alt="Portrait" />
-        <div class="cap">Portrait</div>
-      </div>
-      <div class="m-item" data-cat="portrait">
-        <img src="DSCF0818-2.JPG" alt="Portrait" />
-        <div class="cap">Portrait</div>
-      </div>
-      <div class="m-item" data-cat="portrait">
-        <img src="DSCF0910-2.JPG" alt="Portrait" />
+        <img src="IMG_0912.jpg" alt="Portrait" />
         <div class="cap">Portrait</div>
       </div>
       <div class="m-item" data-cat="portrait">
@@ -309,11 +301,7 @@
         <div class="cap">Portrait</div>
       </div>
       <div class="m-item" data-cat="portrait">
-        <img src="DSCF0604.JPG" alt="Portrait" />
-        <div class="cap">Portrait</div>
-      </div>
-      <div class="m-item" data-cat="portrait">
-        <img src="DSCF0969.jpg" alt="Portrait" />
+        <img src="_DSC0857.JPG" alt="Portrait" />
         <div class="cap">Portrait</div>
       </div>
       <div class="m-item" data-cat="portrait">
@@ -321,15 +309,7 @@
         <div class="cap">Portrait</div>
       </div>
       <div class="m-item" data-cat="portrait">
-        <img src="IMG_0912.jpg" alt="Portrait" />
-        <div class="cap">Portrait</div>
-      </div>
-      <div class="m-item" data-cat="portrait">
-        <img src="_DSC0857.JPG" alt="Portrait" />
-        <div class="cap">Portrait</div>
-      </div>
-      <div class="m-item" data-cat="portrait">
-        <img src="DSCF0557 2.JPG" alt="Portrait" />
+        <img src="DSCF0814.JPG" alt="Portrait" />
         <div class="cap">Portrait</div>
       </div>
       <div class="m-item" data-cat="portrait">
@@ -337,31 +317,35 @@
         <div class="cap">Portrait</div>
       </div>
       <div class="m-item" data-cat="portrait">
-        <img src="DSCF0584.JPG" alt="Portrait" />
+        <img src="DSCF0969.jpg" alt="Portrait" />
+        <div class="cap">Portrait</div>
+      </div>
+      <div class="m-item" data-cat="portrait">
+        <img src="DSCF0910-2.JPG" alt="Portrait" />
         <div class="cap">Portrait</div>
       </div>
     </div>
   </div>
- 
+
   <div class="tagline-bar">
     <span>Los Angeles, CA</span>
     <span>Portrait · Lifestyle · Commercial</span>
     <span>© 2026 Izzy Calle</span>
   </div>
- 
+
   <div class="lb" id="lb">
     <div class="lb-inner">
       <button class="lb-close" id="lbClose">Close ×</button>
       <img id="lbImg" src="" alt="" />
     </div>
   </div>
- 
+
   <script>
     const ham = document.getElementById('ham');
     const navLinks = document.getElementById('navLinks');
     ham.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
- 
+
     document.querySelectorAll('.f-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
@@ -373,10 +357,10 @@
         });
       });
     });
- 
+
     const lb = document.getElementById('lb');
     const lbImg = document.getElementById('lbImg');
- 
+
     document.querySelectorAll('.m-item').forEach(item => {
       item.addEventListener('click', () => {
         lbImg.src = item.querySelector('img').src;
@@ -384,7 +368,7 @@
         document.body.style.overflow = 'hidden';
       });
     });
- 
+
     const closeLb = () => { lb.classList.remove('open'); document.body.style.overflow = ''; lbImg.src = ''; };
     document.getElementById('lbClose').addEventListener('click', closeLb);
     lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
@@ -392,32 +376,3 @@
   </script>
 </body>
 </html>
-
-⚠️ One thing to note:
-The file DSCF0557 2.JPG has a space in the name which can cause issues. I'd recommend renaming it to DSCF0557-2.JPG on GitHub and updating that one line in the code to match!<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Izzy Calle Photography</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.cpasted11:02 PMClaude responded: It looks like the old code was pasted again — the photos still say photos/grad-man.It looks like the old code was pasted again — the photos still say photos/grad-man.jpg etc. No worries though! Here's what to do:
-
-To replace your code on GitHub:
-
-Go to your repository and click on index.html
-Look for a pencil icon OR click the "..." (three dots) button near the top right of the file
-Select "Edit file"
-Press Ctrl+A (Windows) or Cmd+A (Mac) to select ALL the old code
-Press Delete to remove it all
-Paste the new code I gave you in the previous message
-Click "Commit changes"
-
-
-Are you on a phone or computer?
-If you're on a phone that might be why you can't find the edit option — GitHub's mobile version hides the edit button. In that case the easiest fix is to:
-
-Switch to a computer if you can, OR
-Try opening GitHub in your phone's browser and switching to "Desktop site" mode (usually in the browser's settings menu)
-
-Let me know what you're working with and I'll guide you through it! 😊Sonnet 4.6 LowClaude is AI and can make mistakes. Please double-check responses.
